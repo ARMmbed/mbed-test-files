@@ -635,5 +635,3 @@ To get a service:
 1. Give it a 128-bit UUID (16-bit UUIDs are reserved for official services). Find a UUID generator that fits your OS or try a [web-based one](https://www.uuidgenerator.net).
 
 2. 
-
-#Text to remove!
