@@ -2,46 +2,46 @@
 #BLE for Designers
 </a>
 
-BLE is an exciting technology that has a natural appeal for designers who are looking to create art or solve problems. If you're a designer, and you've never programmed anything, we're here to help you get your idea prototyped using BLE on mbed boards.
+BLE is an exciting technology that has a natural appeal for designers who are looking to create art or solve problems. If you're a designer, and you've never programmed anything, we're here to help you get your idea prototyped using BLE on mbed hardware.
 
 ##BLE
 
-BLE means Bluetooth Low Energy (or Bluetooth Smart). It is a short-range wireless communication method - it is how your car, clothes and home can talk to your phone and each other. The difference between BLE and the original Bluetooth standard is that BLE is specifically deigned to reduce power consumption; your BLE device may run for months or years on a coin-cell battery. 
+BLE means Bluetooth Low Energy (or Bluetooth Smart). It is a short-range wireless communication method [JA: Not sure it's a method - I'd have said 'protocol' but that's a bit engineery - is the analogy to WiFI here useful?] - it is how your car, clothes and home can talk to your phone, to each other, and even to the internet. The difference between BLE and the original Bluetooth standard is that BLE is specifically deigned to reduce power consumption; your BLE device may run for months or years on a coin-cell battery. 
 
 You've probably met BLE in a fitness tracker or a smart TV, but the beauty of BLE is that it's simply a method of transferring data - any data. If you have a sensor, button or any other input method, your BLE device can receive input from them and transfer it to a phone, tablet or PC (and with the advent of BLIP - Bluetooth IP Support - directly to the internet). You can then use it with any application you can think of to store or analyse the information, and even send commands back to the device.
 
-This two-way communication means that a single device can be used both to send information and to perform actions based on that information. You could [water your garden](http://www.hosepipeban.org.uk/hosepipe-ban-current-situation/) when the ground is dry, put a beacon with your details on your dog's collar, or flash a light when a car comes too close to your bicycle. You can do anything at all, so long as you have the right sensor and an appropriate BLE-enabled platform - like mbed.
+This two-way communication means that a single device can be used both to send information and to perform actions based on an external system's response to that information. You could [water your garden](http://www.hosepipeban.org.uk/hosepipe-ban-current-situation/) when the ground is dry, put a beacon with your details on your dog's collar, or flash a light when a car comes too close to your bicycle. You can do anything at all, so long as you have the right sensor and an appropriate BLE-enabled platform - like mbed.
 
 ##mbed
 
-[mbed](http://developer.mbed.org) gives you three things: a platform, APIs for that platform, and a programming environment (compiler). 
+[mbed](http://developer.mbed.org) gives you three things: a platform, APIs for that platform, and a programming environment (compiler). [JA: I don't think this is a 'canonical' description of mbed. What does Dan think? ]. [JA: Perhaps also make an anolgy with Arduino here, as that's what designers already know?]
 
-The platforms are little boards with a processor, which have various capabilities like receiving input, generating output, storing small bits of information and so on. Some boards require an external BLE component, and [some](http://developer.mbed.org/platforms/mbed-HRM1017/) [have it](http://developer.mbed.org/platforms/RedBearLab-BLE-Nano/) [built-in](http://developer.mbed.org/platforms/Nordic-nRF51-Dongle/).
+The platforms are little boards with a processor, which have various capabilities like receiving input, generating output, storing small bits of information and so on. Some boards require an external BLE component, and [some](http://developer.mbed.org/platforms/mbed-HRM1017/) [have it](http://developer.mbed.org/platforms/RedBearLab-BLE-Nano/) [built-in](http://developer.mbed.org/platforms/Nordic-nRF51-Dongle/). [JA: Do you have an editorial line on links within text? Where I write docs at the moment, I would tend to prefer links within the same document, like to other sections, to go inline, and links like this to a list of platforms to go in a list with specific platform names...]
 
-Because platforms are standard pieces of hardware, you need to be able to tell them what to do. mbed has created APIs - Application Program Interface - that let you order off the menu. For example, if you want to send something over Bluetooth, you don't need to know the exact commands and sequence of events; you just need to tell the API that you want to send something - we've made sure the API knows how to do it. This is called *abstraction*, and you'll run into that word quite often on our website. BLE has its own API, called BLE_API.
+Because platforms are generic pieces of hardware, you need to be able to tell them what to do. mbed has created APIs - Application Program Interfaces - that let you order off the menu. For example, if you want to send something over Bluetooth, you don't need to know the exact commands and sequence of events; you just need to tell the API that you want to send something - we've made sure the API knows how to do it. This is called *abstraction*, and you'll run into that word quite often on our website. BLE has its own API, called BLE_API. [JA: I think this name will change to just 'BLE', wdyt? ]
 
-To tell the API what to do, you need a programming environment. BLE, like all other mbed capabilities, can be programmed using the [mbed Compiler](https://developer.mbed.org/compiler/). 
+To tell the API what to do, you need a programming environment. BLE, like all other mbed capabilities, can be programmed using the [mbed Online Compiler](https://developer.mbed.org/compiler/). 
 
 ##The mbed Compiler
 
-The compiler fulfils two main purposes: it gives you a programming environment (a place in which to write your code), and it can turn that code into something that the mbed platforms can work with (compile). The compiler can take the same code and compile it for different mbed platforms, meaning you can try out your project on different boards and pick the one that suits you best, without having to re-write your program. 
+The compiler has two main purposes: it gives you a programming environment (a place in which to write your code), and it can turn that code into something that the mbed platforms can work with, or execute (this is called compilation). The compiler can take the same code and compile it for different mbed platforms, meaning you can try out your project on different boards and pick the one that suits you best, without having to re-write your program.
 
 Programming for mbed is done in *C++*. Although you can get quite a lot done with BLE without learning C++, if you want to create something unique you might have to either learn C++ or find a programmer in our community (or among your friends) to collaborate with. 
 
-We'll walk you through using the compiler as we get started on our [coding samples](#uribeaconsample).
+We'll walk you through using the compiler as we get started on our [coding samples](#uribeaconsample). [JA: Plural links to single sample - seems odd]
 ___
 
 <a name="what_to_do"/>
 ##What Does it all Do?
 </a>
 
-The combination of an mbed board, the extra components available to it and BLE capabilities means you can do pretty much anything you like (we'll discuss the limitations [later](#limitations)).
+The combination of an mbed board, the extra components available to it and BLE capabilities means you can do pretty much anything you like (we'll discuss the limitations [later](#limitations)). [JA: This section seems weird because it basically says "anything" which isn't true but that's all it does. Have I missed something?]
 
 ###Gathering Information
 
 Any mbed device, with or without BLE capabilities, can gather information. It can do that with [sensors](http://developer.mbed.org/components/) for anything from [light](http://developer.mbed.org/components/cat/light/) to [touch](http://developer.mbed.org/components/cat/capacitive-touch/), or it can receive information from a computer. 
 
-You could also get information directly from users by providing them some input mechanism, such as a mobile app or button. We'll talk about that later.
+You could also get information directly from users by providing them some input mechanism, such as a mobile app or a button. We'll talk about that later.
 
 ###Displaying Information
 
@@ -51,13 +51,13 @@ The information can be the sensor input - for example, you could display the spe
 
 ###Processing Information 
 
-The two most common sources of information that you might want to process are the sensors and user input. In either case, there are two main paradigms for processing:
+The two most common sources of information that you might want to process are sensor and user input. In either case, there are two main paradigms for processing:
 
 1. *Local processing* means the device itself processes the data and determines what to do. The simplest example is a thermostat, which knows to turn the heat on or off according to a room temperature input, and doesn't require further instructions from anywhere.
 
-2. *Remote processing* means that you send the data to a different device to be handled there, and either wait for instructions from the remote device or simply go on gathering and sending data. For example, if you're trying to predict tomorrow's weather, the device will send data (temperature, barometric pressure etc) to a computer that can analyse it - the local device will simply not have the processing power to run a weather program. 
+2. *Remote processing* means that you send the data to a different device to be handled there, and either wait for instructions from the remote device or simply go on gathering and sending data. For example, if you're trying to predict tomorrow's weather, the device will send data (temperature, barometric pressure etc) to a computer that can analyse it - this is ideal when the local device will not have the processing power or the energy supply to run a weather program. 
 
-BLE is intended for low power devices, and so we'll never perform complex processing on the device - processing burns through batteries. We'll instead send the data elsewhere, and wait for a response. 
+BLE is intended for low power devices, and so we'll never perform complex processing on the device - processing burns through batteries. We'll instead send the data elsewhere, and then go to sleep while we wait for a response. 
 
 ###Sending or Storing Information
 
@@ -65,11 +65,13 @@ If you want a small and power-efficient device, you probably don't want to store
 
 BLE is a short-range method, meaning you'll be able to send information over BLE only if your device and your destination are quite close. If they're further away, you'll need to use Ethernet (regular cable connection), WiFi or radio.
 
+Finally, most mbed devices for BLE have only a very small amount of storage - a high resolution image, for example, might fill the whole of the (flash) memory of a device!
+
 ###Working With Apps or Websites
 
 So if you can't store or process too much information with a BLE device, what is it good for?
 
-The simplest way to use BLE is to advertise a small bit of information to any device in the area, without becoming interactive. For example, you could notify every user entering your shop that you'll be open till late this evening. There is no need for applications, webpages or any response from the users - it's similar to putting a notice on your door.
+The simplest way to use BLE is to advertise a small bit of information to any device in the area, without becoming interactive. For example, you could notify every user entering your shop that you'll be open till late this evening. There is no need for applications, webpages or any response from the users [JA:this, sadly, isn't quite true - at the moment users need the Physical Web app or similar to interact with URIBeacons] - it's similar to putting a notice on your door.
 
 The fully interactive way to use BLE requires an app (mobile or web-based). The app not only does the processing and storing, it also provides users with an interface through which they can send commands back to the BLE device. A very common example is fitness apps on your phone that get your heart rate information from a BLE-based heart rate monitor. The heart rate monitor doesn't store or process information - it just gets your heart rate and sends it to the app, which shows it to the user and allows the user some control of the BLE device.
 
